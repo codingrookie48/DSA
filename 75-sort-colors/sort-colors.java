@@ -1,15 +1,15 @@
 class Solution {
   public void sortColors(int[] nums) {
-    int l = 0;
-    int r = nums.length - 1;
+    int start = 0;
+    int end = nums.length - 1;
 
-    for (int i = 0; i <= r;)
+    for (int i = 0; i <= end;)
       if (nums[i] == 0)
-        swap(nums, i++, l++);
+        swap(nums, i++, start++);
       else if (nums[i] == 1)
         ++i;
       else
-        swap(nums, i, r--);
+        swap(nums, i, end--);
   }
 
   private void swap(int[] nums, int i, int j) {
@@ -18,3 +18,5 @@ class Solution {
     nums[j] = temp;
   }
 }
+ 
+
